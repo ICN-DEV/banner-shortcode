@@ -17,7 +17,7 @@ function banner_customs_shortcode($atts) {
         'button_url' => 'https://coinvestasi.com/',
         'button_label' => 'Default Button Label',
         'banner_image' => 'https://wp.coinvestasi.com/wp-content/uploads/2025/07/Banner_822x192.jpg',
-        'banner_url' => 'https://icn-dev.github.io/coinvestasi-button-shortcode/banner.html',
+        'banner_url' => 'https://icn-dev.github.io/banner-shortcode/banner.html',
         'iframe_height' => 200,
     );
 
@@ -38,6 +38,7 @@ function banner_customs_shortcode($atts) {
 
     $requested_height = absint($atts['iframe_height']);
     $iframe_height = $requested_height > 0 ? $requested_height : (int) $defaults['iframe_height'];
+    $iframe_height = max(157, $iframe_height);
 
     $query_args = array(
         'banner_copy' => sanitize_text_field($atts['banner_copy']),
