@@ -33,7 +33,8 @@ All parameters are optional — the plugin will fall back to sensible defaults i
 | `banner_copy`          | Headline text displayed on the banner.                     | `Default Banner Copy`                                                                   |
 | `button_url`           | URL the CTA button links to.                               | `https://coinvestasi.com/`                                                              |
 | `button_label`         | Text shown on the CTA button.                              | `Default Button Label`                                                                  |
-| `banner_image`         | Background image URL used for the banner (all viewports).  | `https://wp.coinvestasi.com/wp-content/uploads/2025/07/Banner_822x192.jpg`              |
+| `banner_image`         | Background image URL used for the banner (desktop/tablet). | `https://wp.coinvestasi.com/wp-content/uploads/2025/07/Banner_822x192.jpg`              |
+| `banner_image_mobile`  | Background image URL used for the banner on mobile (≤550px). Falls back to `banner_image` when empty. | *(uses `banner_image`)*                                                                 |
 | `banner_url`           | URL of the iframe host that renders the banner.            | `https://icn-dev.github.io/banner-shortcode/banner.html`                                |
 | `iframe_height`        | Iframe height in pixels (minimum 157).                     | `200`                                                                                   |
 
@@ -45,5 +46,6 @@ All parameters are optional — the plugin will fall back to sensible defaults i
   button_url="https://coinvestasi.com/register"
   button_label="Daftar Sekarang"
   banner_image="https://example.com/banner.jpg"
+  banner_image_mobile="https://example.com/banner-mobile.jpg"
   iframe_height="220"]
 ```

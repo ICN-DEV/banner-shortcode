@@ -16,6 +16,7 @@
 
     :root {
       --banner-image: url("https://wp.coinvestasi.com/wp-content/uploads/2025/07/Banner_822x192.jpg");
+      --banner-image-mobile: var(--banner-image);
     }
 
     .banner {
@@ -62,6 +63,7 @@
 
     @media only screen and (max-width: 550px) {
       .banner {
+        background-image: var(--banner-image-mobile);
         max-width: 340px;
         padding: 23px 16px;
       }
@@ -104,9 +106,14 @@
     var buttonURL = getParameterByName('button_url') || 'https://coinvestasi.com/';
     var buttonLabel = getParameterByName('button_label') || 'Daftar';
     var bannerImage = getParameterByName('banner_image');
+    var bannerImageMobile = getParameterByName('banner_image_mobile');
 
     if (bannerImage) {
       document.documentElement.style.setProperty('--banner-image', `url("${bannerImage}")`);
+    }
+
+    if (bannerImageMobile) {
+      document.documentElement.style.setProperty('--banner-image-mobile', `url("${bannerImageMobile}")`);
     }
 
     document.getElementById('dynamicBanner').innerHTML = `<p>${bannerCopy}</p><a target="_blank" href="${buttonURL}" class="button">${buttonLabel}</a>`;
